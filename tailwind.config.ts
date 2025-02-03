@@ -9,8 +9,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#007BFF",
+        secondary: "#F8F9FA",
+        accent: "#FF6F61",
+        success: "#28A745",
+        error: "#DC3545",
+        background: "#FFFFFF",
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        roboto: ["var(--font-roboto)"],
+      },
+      animation: {
+        "infinite-scroll": "infinite-scroll 20s linear infinite",
+        "infinite-scroll-rev": "infinite-scroll-rev 20s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        "infinite-scroll-rev": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
       },
     },
   },
