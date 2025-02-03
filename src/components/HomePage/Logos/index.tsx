@@ -15,7 +15,7 @@ export const Logos = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-y-12 mt-4 items-center font-inter overflow-hidden">
+    <div className="flex flex-col gap-y-12 items-center font-inter overflow-hidden">
       <div className="text-zinc-700 font-light text-4xl">
         Join World&apos;s Top Companies
       </div>

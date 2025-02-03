@@ -2,7 +2,7 @@ import React from "react";
 
 export const Hero = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-secondary px-12 pt-0">
+    <div className="-mt-4 flex justify-center items-center min-h-screen bg-secondary px-12 pt-0">
       <div className="w-full min-h-screen h-full flex flex-col gap-8 items-center py-8 justify-center rounded-3xl font-roboto bg-gradient-to-r from-primary via-[#248cfa] to-primary shadow-[0_0_10px_-2px_#00000030]">
         <div className="text-white w-3/4 text-center text-[84px] font-extrabold leading-[85px]">
           Find Your Dream Job Easily With NEXTJOB
