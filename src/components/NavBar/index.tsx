@@ -8,7 +8,7 @@ export const NavBar = () => {
     <div className="w-full grid grid-cols-[1fr,3fr,1fr] pt-8 px-12 font-inter">
       <Link
         href={"/"}
-        className="text-black font-med text-2xl flex items-center"
+        className="text-black text-2xl flex items-center"
       >
         <Image
           src={"/logo.png"}
