@@ -49,8 +49,11 @@ export const AboutSlider = () => {
   return (
     <section
       id="SERVICES_SLIDER"
-      className="w-full flex flex-col items-center gap-6 mt-4 px-12"
+      className="w-full flex flex-col items-center gap-10 mt-2 px-10"
     >
+      <div className="text-zinc-700 font-light text-4xl">
+        Why People Choose NEXTJOB
+      </div>
       <div className="w-full overflow-hidden">
         <div
           className="flex gap-6 transition-all ease-in-out"

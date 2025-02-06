@@ -1,27 +1,17 @@
 export const servicesSliderData = [
   {
-    title: "إعدادات الأسئلة",
-    text: "في كل فقرة يمكنك تحديد نمط الأسئلة ، وعدد الاسئلة حسب الصعوبة ومجموع الاسئلة ، ومفاتيح الإجابات ، والدرجة والوحدات والدروس",
-    imageHref: "/questionSetting.webp",
+    title: "Explore the Right Jobs and Career Opportunities",
+    text: "Explore feed knows what you need, based on your career interests, will find you what you are searching for. And don't worry about too many opportunities, you can always save them for later.",
+    imageHref: "/logo.png",
   },
   {
-    title: "إعدادات الإختبار",
-    text: "تستطيع تحديد عنوان الإختبار ، والصف ، الفصل الدراسي،والوحدات الدراسية، وعدد فقرات كل اختبار",
-    imageHref: "/testSettings.webp",
+    title: "Take Control Over Your Exposure",
+    text: "With WUZZUF new profile you are in full control. You can make it public so you can use it to brand yourself, or make it visible only for employers to invite you to apply.",
+    imageHref: "/logo.png",
   },
   {
-    title: "الإختبارات السابقة",
-    text: "سيكون لديك قائمة بكل الإختبارات التي قمت بإعدادها سابقا ويمكنك التعديل عليها أو حذفها أو طباعتها أو إرسالها للطلاب",
-    imageHref: "/prevTests.webp",
-  },
-  {
-    title: "الطباعة والمعاينة",
-    text: "بعد إعداد النموذج، يمكنك التعديل بحذف أو إضافة أسئلة جديدة، ثم طباعة نموذجين: واحد للأسئلة وآخر للإجابات",
-    imageHref: "/printer.webp",
-  },
-  {
-    title: "إعدادات الترويسة",
-    text: "اختيار الكليشة أو ( الترويسة ) للإختبار سواء شهري أو نهائي وإعداده على حسب رغبة المعلم",
-    imageHref: "/headerEdit.webp",
+    title: "Track Your Application, the Easy Way",
+    text: "Track your job application status whether it is viewed, shortlisted, rejected, or if a company accessed your contacts. With the tracking feature, you will be one step ahead on your job hunting plan.",
+    imageHref: "/logo.png",
   },
 ];

@@ -1,5 +1,7 @@
+import { Footer } from "@/components/Footer";
 import { AboutSlider } from "@/components/HomePage/AboutSlider";
 import { Hero } from "@/components/HomePage/Hero";
+import { LatestJobs } from "@/components/HomePage/LatestJobs";
 import { Logos } from "@/components/HomePage/Logos";
 import { NavBar } from "@/components/NavBar";
 
@@ -10,7 +12,8 @@ export default function Home() {
       <Hero />
       <Logos />
       <AboutSlider />
-      <div className="h-screen"></div>
+      <LatestJobs />
+      <Footer />
     </div>
   );
 }

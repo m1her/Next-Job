@@ -15,11 +15,11 @@ export const Logos = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-y-12 items-center font-inter overflow-hidden">
+    <div className="flex flex-col gap-y-12 items-center font-inter overflow-hidden py-2">
       <div className="text-zinc-700 font-light text-4xl">
         Join World&apos;s Top Companies
       </div>
-      <div className="w-full flex flex-nowrap overflow-hidden">
+      <div className="w-full flex flex-nowrap">
         <div className="flex animate-infinite-scroll">
           {logos.map((logo, idx) => (
             <div
@@ -53,7 +53,7 @@ export const Logos = () => {
           ))}
         </div>
       </div>
-      <div className="w-full flex -mt-8 flex-nowrap overflow-hidden">
+      <div className="w-full flex -mt-8 flex-nowrap">
         <div className="flex animate-infinite-scroll-rev">
           {logos.map((logo, idx) => (
             <div
