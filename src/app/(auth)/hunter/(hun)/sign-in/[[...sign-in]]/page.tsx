@@ -2,6 +2,7 @@
 
 import * as Clerk from "@clerk/elements/common";
 import * as SignIn from "@clerk/elements/sign-in";
+import Link from "next/link";
 
 export default function HunterLogin() {
   return (
@@ -17,6 +18,7 @@ export default function HunterLogin() {
               Please, Enter You&apos;r Details To Sign In
             </div>
           </header>
+
           <div className="grid grid-cols-2 gap-2 -mt-2">
             <Clerk.Connection
               name="google"
@@ -30,6 +32,7 @@ export default function HunterLogin() {
                 <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
               </svg>
             </Clerk.Connection>
+
             <Clerk.Connection
               name="github"
               className="shadow flex justify-center fill-zinc-800 hover:fill-zinc-900 w-full px-4 py-2 border border-zinc-300 rounded hover:border-zinc-600 transition-all duration-150 hover:bg-zinc-100"
@@ -43,40 +46,54 @@ export default function HunterLogin() {
               </svg>
             </Clerk.Connection>
           </div>
+
           <div className="flex items-center font-inter gap-x-3 text-sm text-zinc-900 before:h-px before:flex-1 before:bg-zinc-300 after:h-px after:flex-1 after:bg-zinc-300">
             or
           </div>
+
           <Clerk.GlobalError className="block text-sm text-error" />
+
           <div className="space-y-4">
-            <Clerk.Field name="emailAddress" className="space-y-2">
+            <Clerk.Field name="identifier" className="space-y-2">
               <Clerk.Label className="text-sm font-medium text-zinc-950">
                 Email
               </Clerk.Label>
               <Clerk.Input
-                type="text"
-                required
+                type="email"
                 className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
               />
               <Clerk.FieldError className="block text-sm text-error" />
             </Clerk.Field>
+
             <Clerk.Field name="password" className="space-y-2">
               <Clerk.Label className="text-sm font-medium text-zinc-950">
                 Password
               </Clerk.Label>
               <Clerk.Input
                 type="password"
-                required
                 className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
               />
               <Clerk.FieldError className="block text-sm text-error" />
             </Clerk.Field>
+
+            {/* Forgot Password Link */}
+            <div className="flex justify-end">
+              <Link
+                href="/reset-password"
+                className="text-sm text-primary decoration-[#175496]/50 underline-offset-4 outline-none hover:text-[#175496] hover:underline focus-visible:underline"
+              >
+                Forgot password?
+              </Link>
+            </div>
           </div>
+
           <SignIn.Action
             submit
             className="w-full rounded-md bg-primary px-3.5 py-1.5 text-center text-sm font-medium text-white shadow outline-none ring-1 ring-inset ring-[#1c60aa] hover:bg-[#1c60aa] focus-visible:outline-[1.5px] focus-visible:outline-offset-2 focus-visible:outline-zinc-950 active:text-white/70"
           >
             Sign In
           </SignIn.Action>
+
           <p className="text-center text-sm text-zinc-500">
             No account?{" "}
             <Clerk.Link

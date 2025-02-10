@@ -46,7 +46,11 @@ const CreateHunterAccount = () => {
           </div>
           <Clerk.GlobalError className="block text-sm text-error" />
           <div className="space-y-4">
-            <Clerk.Field name="identifier" className="space-y-2">
+            <Clerk.Field
+              name="name"
+              className="space-y-2"
+
+            >
               <Clerk.Label className="text-sm font-medium text-zinc-950">
                 Username
               </Clerk.Label>
@@ -87,12 +91,12 @@ const CreateHunterAccount = () => {
             Sign Up
           </SignUp.Action>
           <p className="text-center text-sm text-zinc-500">
-            No account?{" "}
+            Already a member?{" "}
             <Clerk.Link
               navigate="sign-in"
               className="font-medium text-primary decoration-[#175496]/50 underline-offset-4 outline-none hover:text-[#175496] hover:underline focus-visible:underline"
             >
-              Create an account
+              Sign In
             </Clerk.Link>
           </p>
         </SignUp.Step>
