@@ -1,10 +1,12 @@
 "use client";
 
 import * as Clerk from "@clerk/elements/common";
-import * as SignUp from "@clerk/elements/sign-in";
+import * as SignUp from "@clerk/elements/sign-up";
+
 const CreateHunterAccount = () => {
   return (
     <div className="bg-white min-h-screen flex items-center justify-center w-2/5 px-20 py-10">
+      <div id="clerk-captcha"></div>
       <SignUp.Root>
         <SignUp.Step name="start" className="w-full space-y-6 font-inter">
           <header className="text-center flex flex-col items-start">
@@ -46,28 +48,12 @@ const CreateHunterAccount = () => {
           </div>
           <Clerk.GlobalError className="block text-sm text-error" />
           <div className="space-y-4">
-            <Clerk.Field
-              name="name"
-              className="space-y-2"
-
-            >
-              <Clerk.Label className="text-sm font-medium text-zinc-950">
-                Username
-              </Clerk.Label>
-              <Clerk.Input
-                type="text"
-                required
-                className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
-              />
-              <Clerk.FieldError className="block text-sm text-error" />
-            </Clerk.Field>
             <Clerk.Field name="emailAddress" className="space-y-2">
               <Clerk.Label className="text-sm font-medium text-zinc-950">
                 Email
               </Clerk.Label>
               <Clerk.Input
-                type="text"
-                required
+                type="email"
                 className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
               />
               <Clerk.FieldError className="block text-sm text-error" />
@@ -78,7 +64,6 @@ const CreateHunterAccount = () => {
               </Clerk.Label>
               <Clerk.Input
                 type="password"
-                required
                 className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
               />
               <Clerk.FieldError className="block text-sm text-error" />
@@ -89,6 +74,92 @@ const CreateHunterAccount = () => {
             className="w-full rounded-md bg-primary px-3.5 py-1.5 text-center text-sm font-medium text-white shadow outline-none ring-1 ring-inset ring-[#1c60aa] hover:bg-[#1c60aa] focus-visible:outline-[1.5px] focus-visible:outline-offset-2 focus-visible:outline-zinc-950 active:text-white/70"
           >
             Sign Up
+          </SignUp.Action>
+          <p className="text-center text-sm text-zinc-500">
+            Already a member?{" "}
+            <Clerk.Link
+              navigate="sign-in"
+              className="font-medium text-primary decoration-[#175496]/50 underline-offset-4 outline-none hover:text-[#175496] hover:underline focus-visible:underline"
+            >
+              Sign In
+            </Clerk.Link>
+          </p>
+        </SignUp.Step>
+
+        <SignUp.Step
+          name="verifications"
+          className="w-full space-y-6 font-inter"
+        >
+          <header className="text-center">
+            <h1 className="mt-4 text-xl font-medium tracking-tight text-zinc-950">
+              Verify email code
+            </h1>
+          </header>
+          <Clerk.GlobalError className="block text-sm text-red-400" />
+          <SignUp.Strategy name="email_code">
+            <Clerk.Field name="code" className="space-y-2">
+              <Clerk.Label className="text-sm font-medium text-zinc-950">
+                Email code
+              </Clerk.Label>
+              <Clerk.Input
+                type="otp"
+                required
+                className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
+              />
+              <Clerk.FieldError className="block text-sm text-red-400" />
+            </Clerk.Field>
+            <SignUp.Action
+              submit
+              className="w-full rounded-md bg-primary px-3.5 py-1.5 text-center text-sm font-medium text-white shadow outline-none ring-1 ring-inset ring-[#1c60aa] hover:bg-[#1c60aa] focus-visible:outline-[1.5px] focus-visible:outline-offset-2 focus-visible:outline-zinc-950 active:text-white/70"
+            >
+              Verify
+            </SignUp.Action>
+          </SignUp.Strategy>
+          <p className="text-center text-sm text-zinc-500">
+            Already a member?{" "}
+            <Clerk.Link
+              navigate="sign-in"
+              className="font-medium text-primary decoration-[#175496]/50 underline-offset-4 outline-none hover:text-[#175496] hover:underline focus-visible:underline"
+            >
+              Sign In
+            </Clerk.Link>
+          </p>
+        </SignUp.Step>
+
+        <SignUp.Step name="continue" className="w-full space-y-6 font-inter">
+          <header className="text-center">
+            <h1 className="mt-4 text-xl font-medium tracking-tight text-zinc-950">
+              Continue registration
+            </h1>
+          </header>
+          <Clerk.GlobalError className="block text-sm text-red-400" />
+          <div className="flex lg:flex-row flex-col items-end gap-4">
+            <Clerk.Field name="firstName" className="space-y-2">
+              <Clerk.Label className="text-sm font-medium text-zinc-950">
+                First Name
+              </Clerk.Label>
+              <Clerk.Input
+                type="text"
+                className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
+              />
+              <Clerk.FieldError className="block text-sm text-error" />
+            </Clerk.Field>
+            <Clerk.Field name="lastName" className="space-y-2">
+              <Clerk.Label className="text-sm font-medium text-zinc-950">
+                Last Name
+              </Clerk.Label>
+              <Clerk.Input
+                type="text"
+                className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-error"
+              />
+              <Clerk.FieldError className="block text-sm text-error" />
+            </Clerk.Field>
+          </div>
+          <SignUp.Action
+            submit
+            className="w-full rounded-md bg-primary px-3.5 py-1.5 text-center text-sm font-medium text-white shadow outline-none ring-1 ring-inset ring-[#1c60aa] hover:bg-[#1c60aa] focus-visible:outline-[1.5px] focus-visible:outline-offset-2 focus-visible:outline-zinc-950 active:text-white/70"
+          >
+            Continue
           </SignUp.Action>
           <p className="text-center text-sm text-zinc-500">
             Already a member?{" "}
