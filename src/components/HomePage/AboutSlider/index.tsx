@@ -39,6 +39,7 @@ export const AboutSlider = () => {
   }, [currentSlide, data.length]);
 
   const bullitHandler = (idx: number) => {
+    setDuration(500);
     setcurrentSlide(idx);
     setIsAnimating(true);
     setTimeout(() => {
